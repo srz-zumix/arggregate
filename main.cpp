@@ -16,6 +16,7 @@ void f2(Arggregate2::Decl< int, MinMax >::Type x1=Arggregate2::Value< int, ::arg
 	, Arggregate2::Decl< int, MinMax >::Type x2=Arggregate2::Value< int, ::arggregate::Max<int> >(1000) )
 {
 	::std::cout << x1 << ":" << x2 << ::std::endl;
+	x1 = 5000;
 }
 
 int main(void)

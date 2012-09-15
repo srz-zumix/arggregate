@@ -111,9 +111,15 @@ public:
 		{
 			// デフォルト引数の場合は集計しない
 		}
+		Decl(const _Myt& rhs) : detail::ValueType<T>(rhs), m_default(false)
+		{
+		}
 		
+		_Myt&	operator = (const T& rhs) { *static_cast<detail::ValueType<T>*>(this) = rhs; return *this; }
 	public:
 		bool	is_default(void) const { return m_default; }
+	private:
+
 	private:
 		bool	m_default;
 	};
