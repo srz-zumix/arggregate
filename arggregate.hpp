@@ -1,7 +1,6 @@
 #ifndef INCG_ARGGREGATE_H_
 #define INCG_ARGGREGATE_H_
 
-// define
 #define ArggregateCategory(uniqename)	Category<__LINE__>
 
 namespace arggregate
@@ -49,7 +48,7 @@ private:
 };
 
 /**
- * @brief	ƒfƒtƒHƒ‹ƒgˆø””»•Ê—p‚ÌŒ^
+ * @brief	ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå¼•æ•°åˆ¤åˆ¥ç”¨ã®å‹
 */
 template<typename T>
 class DefaultArgument : public ValueType<T> 
@@ -62,7 +61,7 @@ public:
 }
 
 /**
- * @brief	ƒJƒeƒSƒŠ[
+ * @brief	ã‚«ãƒ†ã‚´ãƒªãƒ¼
 */
 template<int LINE>
 class Category
@@ -94,7 +93,7 @@ class Category
 	
 public:
 	/**
-	 * @brief	Œ^’è‹`
+	 * @brief	å‹å®šç¾©
 	*/
 	template<typename T, typename Aggregate>
 	class Decl : public detail::ValueType<T>
@@ -109,7 +108,7 @@ public:
 		}
 		Decl(const detail::DefaultArgument<T>& rhs) : detail::ValueType<T>(rhs), m_default(true)
 		{
-			// ƒfƒtƒHƒ‹ƒgˆø”‚Ìê‡‚ÍWŒv‚µ‚È‚¢
+			// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå¼•æ•°ã®å ´åˆã¯é›†è¨ˆã—ãªã„
 		}
 		Decl(const _Myt& rhs) : detail::ValueType<T>(rhs), m_default(false)
 		{
@@ -125,7 +124,7 @@ public:
 	};
 	
 	/**
-	 * @brief	ƒfƒtƒHƒ‹ƒg’l‚Ìæ“¾ƒNƒ‰ƒX
+	 * @brief	ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤ã®å–å¾—ã‚¯ãƒ©ã‚¹
 	*/
 	template<typename T, typename SimpleAggregate>
 	static detail::DefaultArgument<T> Value(const T& defalut_value)
@@ -140,7 +139,7 @@ template<typename Aggregate>
 Aggregate	Category<LINE>::Instance<Aggregate>::m_aggregate;
 
 /**
- * @brief	Å¬’l
+ * @brief	æœ€å°å€¤
 */
 template<typename T, typename Next=detail::EOT>
 class Min : public detail::AggregateBase
@@ -163,7 +162,7 @@ public:
 };
 
 /**
- * @brief	Å‘å’l
+ * @brief	æœ€å¤§å€¤
 */
 template<typename T, typename Next=detail::EOT>
 class Max : public detail::AggregateBase
